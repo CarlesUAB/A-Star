@@ -14,16 +14,18 @@ public class Main {
 	public static void main(String args[]) {
 
 		/* MAP OF SPAIN */
-		/*
-		 * HashMap<Integer, Node> graf =
-		 * Map.buildGraph("C:\\Users\\Carles\\Documents\\Mates\\TFG\\spain_ascii.csv");
-		 * 
-		 * Integer start = 771979683; Integer end = 698734221; ArrayList<BackTracking>
-		 * path = Solve.find(graf, start, end);
-		 * System.out.println("FOUND PATH WITH LENGTH: " + graf.get(end).g +
-		 * " meters."); // for (int i = 0; i < path.size(); i++) { //
-		 * System.out.print(path.get(i)); // }
-		 */
+		
+		HashMap<Integer, Node> graf =
+		Map.buildGraph("spain_ascii.csv");
+		 
+		Integer start = 771979683; 
+		Integer end = 698734221; 
+		ArrayList<BackTracking> path = Solve.find(graf, start, end);
+		System.out.println("FOUND PATH WITH LENGTH: " + graf.get(end).g +" meters."); 
+		for (int i = 0; i < path.size(); i++) {
+		System.out.print(path.get(i));  
+	}
+		
 
 		/* 2x2x2 RUBIK CUBE */
 		HashMap<Rubik2Id, Rubik2Node> graf = Rubik.buildGraf();
@@ -64,29 +66,3 @@ public class Main {
 		Solve.findAlternative(graf, start, end, Rubik2Node.MULT, 0., heuristicMap);
 	}
 }
-
-//	public static void main(String args[]) {
-//
-//		long t0 = System.nanoTime();
-//		HashMap<Rubik2Id, Rubik2Node> graf = Rubik.buildGraf();
-//		long t1 = System.nanoTime();
-//		System.out.println("GRAPH FINISHED - SIZE: " + graf.size() + " IN " + (t1 - t0) + " NANOSECONDS "
-//				+ (t1 - t0) / 1000000000);
-//
-//		byte[] pos = { 0, 2, 1, 3, 4, 5, 6, 7 };
-//		byte[] ori = { 0, 0, 0, 0, 0, 0, 0, 0 };
-//
-//		Rubik2Id start = new Rubik2Id(pos, ori);
-//		Rubik2Id end = new Rubik2Id(Rubik2Id.POSITIONSSOLVED, Rubik2Id.ORIENTATIONSSOLVED);
-//
-//		t0 = System.nanoTime();
-//		ArrayList<Rubik2Backtracking> path = Solve.find(graf, start, end);
-//		t1 = System.nanoTime();
-//		System.out.println("PATH OF " + path.size() + " MOVEMENTS FOUND IN " + (t1 - t0) + " NANOSECONDS "
-//				+ (t1 - t0) / 1000000000);
-//
-//		for (int i = 0; i < path.size(); i++) {
-//			System.out.print(path.get(i));
-//		}
-//	}
-//}

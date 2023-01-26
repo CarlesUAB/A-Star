@@ -94,47 +94,6 @@ public class Rubik2Id {
 		return result;
 	}
 
-//	boolean verifyCorner(byte[] buffer, byte j) {
-//		for (int i = 0; i < 3; i++) {
-//			if (!contains(buffer, Rubik2Node.FACENUMBER[j][i])) {
-//				return false;
-//			}
-//		}
-//		return true;
-//	}
-
-//	boolean contains(byte[] buffer, byte b) {
-//		for (int i = 0; i < 3; i++) {
-//			if (buffer[i] == b) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
-
-//	void checkId() {
-//		for (int i = 0; i < 8; i++) {
-//			System.out.println(i + ": POSITION: " + positions[i] + " ORIENTATION: " + orientations[i]);
-//		}
-//
-//		byte buffer = 0;
-//		for (int i = 0; i < 8; i++) {
-//			buffer += positions[i];
-//		}
-//		byte sum = 28;
-//		if (buffer != sum) {
-//			System.out.println("WRONG POSITIONS ASIGNED");
-//			System.exit(-1);
-//		}
-//		for (int i = 0; i < 8; i++) {
-//			if (orientations[i] < 0 || orientations[i] > 2) {
-//				System.out.println("WRONG ORIENTATIONS ASIGNED");
-//				System.exit(-1);
-//				this.equals(ORIENTATIONSSOLVED);
-//			}
-//		}
-//	}
-
 	@Override
 	public boolean equals(Object o) {
 		Rubik2Id id2 = (Rubik2Id) o;
@@ -172,5 +131,4 @@ public class Rubik2Id {
 		s = s + "\n";
 		return s;
 	}
-
 }
